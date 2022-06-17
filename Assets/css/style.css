@@ -1,0 +1,70 @@
+*{
+    color: rgb(218, 215, 250);
+    background-color: rgb(250, 224, 215);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#cityInput,#cityName, #inputContainer,button{
+    margin: 3px;
+    padding: 4px;
+    text-align: center;
+
+}
+
+#weatherContainer{
+    margin: 3px;
+    padding: 4px;
+    text-align: center;
+ 
+}
+
+#iconContainer{
+    margin: 3px;
+    padding: 4px;
+    text-align: center;  
+}
+
+.icons{
+    height: 180px;
+    width: 160px;
+    margin:3ox;
+
+}
+
+.images{
+    height: 160px;
+    width: 140px; 
+}
+
+.classimg{
+    height: 160px;
+    width: 140px;  
+}
+
+.weather{
+    margin: 3px;
+    text-align: center;
+}
+
+.minValues{
+    text-align: center;
+    display: inline-block;
+    border-radius: 5px;
+    height: 25px;
+    width: 85px;
+    margin: 0;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+
+.maxValues{
+    text-align: center;
+    display: inline-block;
+    border-radius: 5px;
+    height: 25px;
+    width: 85px;
+    margin: 0;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
