@@ -5,17 +5,37 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./Assets/css/style.css">
 
-<title>Weatherforecast</title>
+
 </head>
 <body>
-    <center>
+    <!-- <header>
 <h1 id="WTitle">Weather Dashboard</h1>
 <p id="inputContainer">City:<input type="text" id="cityInput"></p>
 <button type="button" onclick="GetInfo()">Click here</button>
 <h2 id="cityName">---Shanghai---</h2>
-</center>
+    </header> -->
+
+<header>
+    <h1 align="center">Weatherforecast</h1>
+    <h4 id="currentTime"></h4>
+</header>
+<div  align="center">
+    <h2>
+Search cities
+    </h2>
+    <input align="center" id="inputText">
+    <button align="center" id="SearchBtn">Search</button>
+</div>
+
+<div>
+    <ul align="center"><li>citylist</li></ul>
+</div>
+
+
 <div id="weatherContainer">
    <div id="iconContainer">
     <div class="icons">
