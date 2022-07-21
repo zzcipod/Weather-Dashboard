@@ -2,55 +2,83 @@
 //     const newInput = document.getElementById("cityInput");
 //     const newName = document.getElementById("cityName");
 // newName.innerHTML = "--"+newInput.value+"--";
+var citySerach = 'Beijing';
+// var weatherApi = 'https://api.openweathermap.org/data/2.5/forecast?q='+'&appid=32ba0bfed592484379e51106cef3f204';
 
-var weatherApi = 'https://api.openweathermap.org/data/2.5/forecast?q='+'&appid=32ba0bfed592484379e51106cef3f204';
+var humEl = document.getElementById('todayHumid');
 
-function disPlaytime(){
-    const timElement = document.getElementById('currentTime');
-    const currentTime = new Date();
-    timElement.innerText = currentTime;
 
+function fetchFunction(){
+fetch('https://api.openweathermap.org/data/2.5/forecast?q='+ citySerach + '&appid=32ba0bfed592484379e51106cef3f204')
+.then(function(response){
+return response.json()
+})
+.then(function(data){
+    console.log(data)
+    var latitude = data.city.coord.lat;
+    console.log(latitude)
+    var longitude = data.city.coord.lon;
+    console.log(longitude)
+    fetch('https://api.openweathermap.org/data/2.5/onecall?lat='+ latitude + '&lon='+longitude + '&appid=32ba0bfed592484379e51106cef3f204&units=inperial') 
+    .then(function(response){
+    return response.json()
+    })
+    .then(function(data){
+        console.log(data, 'second fetch')
+       var humWea = data.current.humidity;
+       humEl.textContent = humWea;
+})
+
+})
 }
 
-disPlaytime()
+fetchFunction()
+// function disPlaytime(){
+//     const timElement = document.getElementById('currentTime');
+//     const currentTime = new Date();
+//     timElement.innerText = currentTime;
+
+// }
+
+// disPlaytime()
 
 
 
 
 
-function getLocations(){
-    const getGeoLocal = navigator.geolocation.getCurrentPosition(
-        function (position){
-            console.log (position)
-            localStorage.setItem('latitude',position.coords.lat)
-            localStorage.setItem('longtutude',position.coords.lon)
-        }
-    );
-    console.log(getGeoLocal)
+// function getLocations(){
+//     const getGeoLocal = navigator.geolocation.getCurrentPosition(
+//         function (position){
+//             console.log (position)
+//             localStorage.setItem('latitude',position.coords.lat)
+//             localStorage.setItem('longtutude',position.coords.lon)
+//         }
+//     );
+//     console.log(getGeoLocal)
     
-    let localLoc = JSON.parse(localStorage.getItem('location'));
-    if (localLoc ===null ){
-        localLoc= []
-    } else {
-    console.log(localLoc)
-    }
-    return localLoc;
-}
+//     let localLoc = JSON.parse(localStorage.getItem('location'));
+//     if (localLoc ===null ){
+//         localLoc= []
+//     } else {
+//     console.log(localLoc)
+//     }
+//     return localLoc;
+// }
 
-getLocations();
+// getLocations();
 
-$("#SearchBtn").click(function(){
-    inputText=$("#inputText").val();
-    SearchLink(inputText);
-});
+// $("#SearchBtn").click(function(){
+//     inputText=$("#inputText").val();
+//     SearchLink(inputText);
+// });
 
-function SearchLink(searchSource){
+// function SearchLink(searchSource){
     
-    fetch(SearchUrl)
-    .then(response => response.json())
-    .then(data => WeatherSearchFun());
+//     fetch(SearchUrl)
+//     .then(response => response.json())
+//     .then(data => WeatherSearchFun());
 
-}
+// }
 
 
 
@@ -108,5 +136,3 @@ function SearchLink(searchSource){
 //     for (i=0; i<5;i++){
 //         document.getElementById("day"+(i+1)).innerHTML = weekday[CheckDay(i)]
 //     }
-
-
