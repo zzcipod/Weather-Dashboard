@@ -6,7 +6,9 @@ var citySerach = 'Beijing';
 // var weatherApi = 'https://api.openweathermap.org/data/2.5/forecast?q='+'&appid=32ba0bfed592484379e51106cef3f204';
 
 var humEl = document.getElementById('todayHumid');
-
+var temEl = document.getElementById('todayTemp');
+var winEl = document.getElementById('todayWind');
+var uviEl = document.getElementById('todayUvi');
 
 function fetchFunction(){
 fetch('https://api.openweathermap.org/data/2.5/forecast?q='+ citySerach + '&appid=32ba0bfed592484379e51106cef3f204')
@@ -25,11 +27,31 @@ return response.json()
     })
     .then(function(data){
         console.log(data, 'second fetch')
+        var temWea=data.current.temp;
+        var winWea=data.current.wind_deg;
        var humWea = data.current.humidity;
+       var uviWea = data.current.uvi;
        humEl.textContent = humWea;
+       temEl.textContent = temWea;
+       winEl.textContent = winWea;
+        uviEl.textContent = uviWea;
 })
 
 })
+// .then(function(data){
+//     console.log(data)
+//     var latitude = data.city.coord.lat;
+//     console.log(latitude)
+//     var longitude = data.city.coord.lon;
+//     console.log(longitude)
+//     fetch('https://api.openweathermap.org/data/2.5/onecall?lat='+ latitude + '&lon='+longitude + '&appid=32ba0bfed592484379e51106cef3f204&units=inperial') 
+//     .then(function(response){
+//     return response.json()
+//     })
+//     .then(function(data){
+//         console.log(data, 'third fetch')
+//        var humWea = data.current.
+//        humEl.textContent = humWea;
 }
 
 fetchFunction()
