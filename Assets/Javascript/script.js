@@ -62,23 +62,3 @@ return response.json()
     
 
 fetchFunction()
-
-function LocalStr(locStore) {
-    console.log(locStore)
-    $('#recallCityList').empty();
-    locStore.forEach(remPlace => {
-        $('#recallCityList').append($(`<li>${remPlace}</li>`));
-    });
-}
-
-$('#recallCityList').on('click', getCity);
-
-function getCity(event) {
-    let targetItem = event.target;
-    if(targetItem.matches('li')) {
-        let targetText = targetItem.textContent;
-        let cityArr = targetText.split(',');
-        let cityName = cityArr[0];
-        searchPosFunc(cityName);
-    }
-}
