@@ -13,12 +13,6 @@
 
 </head>
 <body>
-    <!-- <header>
-<h1 id="WTitle">Weather Dashboard</h1>
-<p id="inputContainer">City:<input type="text" id="cityInput"></p>
-<button type="button" onclick="GetInfo()">Click here</button>
-<h2 id="cityName">---Shanghai---</h2>
-    </header> -->
 
 <header>
     <h1 align="center">Weatherforecast</h1>
@@ -33,7 +27,9 @@ Search cities
 </div>
 
 <div>
-    <ul align="center"><li>citylist</li></ul>
+    <div class="CityList" align="center">
+        <ul id="RecordedCityList"></ul>
+    </div>
 </div>
 
 
@@ -41,7 +37,7 @@ Search cities
    <div id="iconContainer">
     <div class="icons">
         <p class="weather" id="Mon" ></p>
-           <div class="images"> <img src="dots.png" class="classimg" id="pic1"> </div> 
+           <div class="images"> </div> 
             
                 <p class="todayStats">Temp: <span id="todayTemp"></span></p>
                 <p class="todayStats">Wind: <span id="todayWind"></span></p>
@@ -60,48 +56,6 @@ Search cities
     <div id="day5Ahead">
     </div>
     </div>
-    <!-- <div class="icons">
-        <p class="weather" id="Tue"></p>
-           <div class="images"> <img src="dots.png" class="classimg" id="pic2"> </div> 
-              
-                <p class="todayStats">Temp: <span id="todayTemp2"></span></p>
-                <p class="todayStats">Wind: <span id="todayWind2"></span></p>
-                <p class="todayStats">Humidity: <span id="todayHumid2"></span></p>
-                <p class="todayStats">UV Index: <span id="todayUvi2"></span></p>
-          
-
-    </div>
-    <div class="icons">
-        <p class="weather" id="Wed"></p>
-           <div class="images"> <img src="dots.png" class="classimg" id="pic3">  </div> 
-                
-                    <p class="todayStats">Temp: <span id="todayTemp3"></span></p>
-                    <p class="todayStats">Wind: <span id="todayWind3"></span></p>
-                    <p class="todayStats">Humidity: <span id="todayHumid3"></span></p>
-                    <p class="todayStats">UV Index: <span id="todayUvi3"></span></p>
-         
-
-    </div>
-    <div class="icons">
-        <p class="weather" id="Thu"></p>
-           <div class="images"> <img src="dots.png" class="classimg" id="pic4">  </div> 
-            
-                <p class="todayStats">Temp: <span id="todayTemp4"></span></p>
-                <p class="todayStats">Wind: <span id="todayWind4"></span></p>
-                <p class="todayStats">Humidity: <span id="todayHumid4"></span></p>
-                <p class="todayStats">UV Index: <span id="todayUvi4"></span></p>
-
-    </div>
-    <div class="icons">
-        <p class="weather" id="Fri"></p>
-           <div class="images"> <img src="dots.png" class="classimg" id="pic5">  </div> 
-        
-                <p class="todayStats">Temp: <span id="todayTemp5"></span></p>
-                <p class="todayStats">Wind: <span id="todayWind5"></span></p>
-                <p class="todayStats">Humidity: <span id="todayHumid5"></span></p>
-                <p class="todayStats">UV Index: <span id="todayUvi5"></span></p>
-  
-    </div> -->
    </div> 
 </div>
 
