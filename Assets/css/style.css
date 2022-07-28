@@ -72,3 +72,11 @@
 .icons{
     display: inline-block;
 }
+
+.fivedayFor{
+    display: flex;
+    font-size: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+}
